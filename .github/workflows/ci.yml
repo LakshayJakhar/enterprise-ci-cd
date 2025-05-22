@@ -32,12 +32,12 @@ jobs:
       - name: Run Tests with pytest
         run: |
           echo "Running unit tests..."
-          pytest tests/ --maxfail=1 --disable-warnings -q
+          PYTHONPATH=src pytest tests/ --maxfail=1 --disable-warnings -q
 
       - name: Run test with coverage
         run: |
           echo "Running unit tests with coverage..."
-          pytest --cov=src tests/ --maxfail=1 --disable-warnings -q
+          PYTHONPATH=src pytest --cov=src tests/ --maxfail=1 --disable-warnings -q
 
       - name: Run script
         run: python src/main.py
