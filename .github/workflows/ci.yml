@@ -45,5 +45,15 @@ jobs:
           echo "Running black..."
           black src/ tests/ --check
 
+      - name: Security linting with Bandit
+        run: |
+          echo "Running Bandit security checks..."
+          bandit -r src
+
+      - name: Dependency vulnerability scan with Safety
+        run: |
+          echo "Running Safety dependency scan..."
+          safety check
+
       - name: Run script
         run: python src/main.py
