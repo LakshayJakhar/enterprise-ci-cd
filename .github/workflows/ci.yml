@@ -39,5 +39,11 @@ jobs:
           echo "Running unit tests with coverage..."
           pytest --cov=src tests/ --maxfail=1 --disable-warnings -q
 
+      - name: Formate code with black
+        run: |
+          pip install black
+          echo "Running black..."
+          black src/ tests/ --check
+
       - name: Run script
         run: python src/main.py
