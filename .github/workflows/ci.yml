@@ -61,3 +61,11 @@ jobs:
 
       - name: Run script
         run: python src/main.py
+
+      - name: Notify Discord
+        if: always()
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          STATUS=$([[ "${{ job.status }}" == "success" ]] && echo "✅ Success" || echo "❌ Failure")
+          curl -H "Content-Type: application/json" -X POST -d "{\"content\":\"CI workflow finished with status: $STATUS\"}" $DISCORD_WEBHOOK_URL
