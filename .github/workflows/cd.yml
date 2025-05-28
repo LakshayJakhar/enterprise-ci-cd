@@ -9,22 +9,22 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
-      - name: Simulate Build
-        run: |
-          echo "Starting build process..."
-          mkdir -p build
-          echo "This is a build artifact" > build/artifact.txt
-          echo "Build completed!"
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: build-artifact
-          path: build/
+  #    steps:
+  #      - name: Checkout Code
+  #       uses: actions/checkout@v3
+  #
+  #     - name: Simulate Build
+  #        run: |
+  #         echo "Starting build process..."
+  #          mkdir -p build
+  #          echo "This is a build artifact" > build/artifact.txt
+  #          echo "Build completed!"
+  #
+  #      - name: Upload build artifact
+  #        uses: actions/upload-artifact@v3
+  #        with:
+  #          name: build-artifact
+  #          path: build/
 
   deploy:
     runs-on: ubuntu-latest
@@ -34,11 +34,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: build-artifact
-          path: build/
+      #     - name: Download build artifact
+      #        uses: actions/download-artifact@v3
+      #        with:
+      #          name: build-artifact
+      #          path: build/
 
       - name: Simulate Deployment
         run: |
