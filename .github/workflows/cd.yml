@@ -15,5 +15,5 @@ jobs:
 
       - name: Simulate Deployment
         run: |
-          echo"starting mock deployment"
-          echo"DEployment simulated successfully"
+          echo "starting mock deployment"
+          echo "Deployment simulated successfully"
