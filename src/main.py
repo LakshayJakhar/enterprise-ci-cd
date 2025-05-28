@@ -16,3 +16,5 @@ if __name__ == "__main__":
 
 def some_function():
     return 42
+
+def nice();
