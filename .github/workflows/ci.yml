@@ -59,8 +59,8 @@ jobs:
           echo "Running Safety dependency scan..."
           safety check
 
-      - name: Run script
-        run: python src/main.py
+      #      - name: Run script
+      #        run: python src/main.py
 
       - name: Notify Discord
         if: always()
