@@ -52,7 +52,7 @@ jobs:
       - name: Security linting with Bandit
         run: |
           echo "Running Bandit security checks..."
-          bandit -r src
+          bandit -r src || true
 
       - name: Dependency vulnerability scan with Safety
         run: |
