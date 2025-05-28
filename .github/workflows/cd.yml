@@ -21,7 +21,7 @@ jobs:
           echo "Build completed!"
 
       - name: Upload build artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@c17ac96c6e4cbf996e58c3d31a3eec3c7c51f7a7
         with:
           name: build-artifact
           path: build/
@@ -35,7 +35,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@bc59b5d6f6db33c7b6aa4206e24029c1ddcf3b5a
         with:
           name: build-artifact
           path: build/
