@@ -13,6 +13,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
+      - name: Simulate Build
+        run: |
+          echo "Starting build process..."
+          mkdir build
+          echo "This is a build artifact" > build/artifact.txt
+          echo "Build completed!"
+
       - name: Simulate Deployment
         run: |
           echo "starting mock deployment"
