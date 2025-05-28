@@ -23,5 +23,5 @@ jobs:
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }} # Add your Railway API token in repo secrets
         run: |
-          railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --service backend
+          railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --flask-api
           railway up --detach
