@@ -23,4 +23,5 @@ jobs:
         env:
           RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }} # Add your Railway API token in repo secrets
         run: |
+          railway link --project insighful 
           railway up --detach
