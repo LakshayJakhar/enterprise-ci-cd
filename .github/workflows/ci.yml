@@ -74,7 +74,7 @@ jobs:
       - name: Push Docker Image
         run: |
           echo "Pushing Docker image..."
-          docker push ghcr.io/${{ github.actor }}/my-python-app:latest
+          docker push ghcr.io/lakshayjakhar/my-python-app:latest
 
       #      - name: Run script
       #        run: python src/main.py
