@@ -18,13 +18,9 @@ jobs:
       - name: Install Railway CLI
         run: npm install -g @railway/cli
 
-      - name: Login with login token
+      - name: Link project
         env:
           RAILWAY_API_TOKEN: 360c46bd-dde7-4439-a131-d121b4ad8205
-        run: |
-          railway login
-
-      - name: Link project (only once or cache .railway folder)
         run: railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --service web
 
       - name: Deploy with production token
