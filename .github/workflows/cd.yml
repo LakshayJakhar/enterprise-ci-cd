@@ -17,18 +17,11 @@ jobs:
 
       - name: Install Railway CLI
         run: |
-          curl -fsSL https://github.com/railwayapp/cli/releases/latest/download/railway-x64-unknown-linux-gnu -o railway
-          chmod +x railway
-          sudo mv railway /usr/local/bin/railway
-
-      - name: Test Railway Auth
-        env:
-          RAILWAY_API_TOKEN: ${{ secrets.HELLO }}
-        run: railway whoami
+          curl -sSL https://railway.app/install.sh | sh
 
       - name: Deploy to Railway
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN}} # Addd your Railway API token in repo secrets
+          RAILWAY_API_TOKEN: ${{ secrets.HELLO}} # Addd your Railway API token in repo secrets
         run: |
           echo "Token length: ${#RAILWAY_API_TOKEN}"
           railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --service web
