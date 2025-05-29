@@ -17,7 +17,7 @@ jobs:
 
       - name: Deploy to Railway using Docker CLI
         env:
-          RAILWAY_API_TOKEN: ${{ secrets.HELLO }}
+          RAILWAY_API_TOKEN: dc13a151-12d8-4eeb-a475-1a1bc23b834b
         run: |
           echo "Token length: ${#RAILWAY_API_TOKEN}"
           docker run --rm \
