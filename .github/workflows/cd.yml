@@ -14,11 +14,11 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-
-      - name: Install Railway CLI
+      - name: Install Railway CLI (manual)
         run: |
-          curl -sSL https://railway.app/install.sh | sh
-          echo "$HOME/.railway/bin" >> $GITHUB_PATH
+          curl -fsSL https://github.com/railwayapp/cli/releases/latest/download/railway-linux-amd64 -o railway
+          chmod +x railway
+          sudo mv railway /usr/local/bin/railway
 
       - name: Deploy to Railway
         env:
