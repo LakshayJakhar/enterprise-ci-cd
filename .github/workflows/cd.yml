@@ -17,4 +17,4 @@ jobs:
       RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
     steps:
       - uses: actions/checkout@v3
-      - run: railway up --service=${{ env.SVC_ID }}
+      - run: railway up --image ghcr.io/lakshayjakhar/my-python-app:latest --service=${{ env.SVC_ID }}
