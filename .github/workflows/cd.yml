@@ -15,16 +15,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Deploy to Railway using Docker CLI
-        env:
-          RAILWAY_API_TOKEN: dc13a151-12d8-4eeb-a475-1a1bc23b834b
+      - name: Install Railway CLI
         run: |
-          echo "Token length: ${#RAILWAY_API_TOKEN}"
-          docker run --rm \
-            -e RAILWAY_API_TOKEN \
-            -v ${{ github.workspace }}:/app \
-            -w /app \
-            ghcr.io/railwayapp/cli:latest /bin/sh -c "
-              railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --service web &&
-              railway up --detach
-          "
+          curl -sSL https://railway.app/install.sh | sh
+
+      - name: Deploy to Railway
+        env:
+          RAILWAY_API_TOKEN: ${{ secrets.RAILWAY_API_TOKEN}} # Addd your Railway API token in repo secrets
+        run: |
+          railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --service web
+          railway up --detach
