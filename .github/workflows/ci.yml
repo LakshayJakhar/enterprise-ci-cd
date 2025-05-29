@@ -67,18 +67,13 @@ jobs:
           password: ${{ secrets.GHCR_PAT }}
 
       - name: Build Docker Image
-        env:
-          IMAGE_TAG: ghcr.io/lakshayjakhar/my-python-app:${{ github.sha }}
         run: |
           echo "Building Docker image..."
-          docker build -t $IMAGE_TAG -t ghcr.io/lakshayjakhar/my-python-app:latest .
+          docker build -t ghcr.io/lakshayjakhar/my-python-app:latest .
 
       - name: Push Docker Image
-        env:
-          IMAGE_TAG: ghcr.io/lakshayjakhar/my-python-app:${{ github.sha }}
         run: |
           echo "Pushing Docker image..."
-          docker push $IMAGE_TAG
           docker push ghcr.io/lakshayjakhar/my-python-app:latest
 
       #      - name: Run script
