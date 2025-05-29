@@ -20,10 +20,10 @@ jobs:
 
       - name: Link project
         env:
-          RAILWAY_API_TOKEN: 360c46bd-dde7-4439-a131-d121b4ad8205
+          RAILWAY_API_TOKEN: f1572915-b493-459a-b1e3-f707488e2b47
         run: railway link -p 476f6066-be93-4e06-a1b5-cdfc2efba3cc --service web
 
       - name: Deploy with production token
         env:
-          RAILWAY_API_TOKEN: 360c46bd-dde7-4439-a131-d121b4ad8205
+          RAILWAY_API_TOKEN: f1572915-b493-459a-b1e3-f707488e2b47
         run: railway up
