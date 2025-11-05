@@ -4,7 +4,6 @@
 # Enterprise CI/CD Python Project
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
-![GitHub Actions](https://img.shields.io/github/actions/workflow/status/LakshayJakhar/enterprise-ci-cd/ci.yml?branch=main)
 ![Docker](https://img.shields.io/badge/Docker-Ready-green)
 ![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
